@@ -1,0 +1,55 @@
+{
+  "name": "ink-boilerplate",
+  "version": "0.0.1",
+  "description": "Boilerplate for using react-ink and babel features in node",
+  "author": "karlas",
+  "license": "MIT",
+  "scripts": {
+    "start": "node dist/index.js",
+    "dev": "node -r @babel/register src/index.js",
+    "dev:watch": "nodemon --inspect=8050 src/index.js",
+    "build": "rimraf dist && babel src -d dist",
+    "lint": "eslint src tests --ext .js --max-warnings 0",
+    "test": "NODE_ENV=test jest",
+    "test:coverage": "NODE_ENV=test jest --coverage"
+  },
+  "dependencies": {
+    "ink": "^2.7.1",
+    "react": "^16.13.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.6.4",
+    "@babel/core": "^7.6.4",
+    "@babel/node": "^7.6.3",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/plugin-proposal-export-default-from": "^7.5.2",
+    "@babel/plugin-proposal-function-bind": "^7.2.0",
+    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.4.4",
+    "@babel/plugin-proposal-optional-chaining": "^7.6.0",
+    "@babel/plugin-proposal-throw-expressions": "^7.2.0",
+    "@babel/plugin-syntax-decorators": "^7.2.0",
+    "@babel/preset-env": "^7.6.3",
+    "@babel/preset-react": "^7.9.4",
+    "@babel/register": "^7.6.2",
+    "babel-eslint": "^10.0.3",
+    "eslint": "^6.6.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-react": "^7.19.0",
+    "jest": "^25.1.0",
+    "lint-staged": "^10.0.3",
+    "nodemon": "^2.0.1",
+    "rimraf": "^3.0.2"
+  },
+  "jest": {
+    "coverageDirectory": "./coverage/",
+    "collectCoverage": true,
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ],
+    "modulePathIgnorePatterns": [
+      "/dist"
+    ],
+    "testEnvironment": "node"
+  }
+}
